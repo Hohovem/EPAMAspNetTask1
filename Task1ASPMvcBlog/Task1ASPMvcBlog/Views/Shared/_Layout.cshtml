@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My Blog</title>
+
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand">
+                <img class="" src="~/Content/Images/logo.jpg" />
+                <h1 class="navbar-brand">Hoho Blog</h1>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-10 bg-light">
+                @RenderBody()
+            </div>
+            <div class="col-2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-link tab-pane">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Reviews", "Reviews", "Home")</li>
+                    <li class="nav-link">@Html.ActionLink("Profile", "Profile", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<footer class="footer">
+    <div class="container-fluid">
+        <div class="text-center">
+            <a href="#" title="Вернуться к началу" class="topbutton">
+                <img src="~/Content/Images/NavButtons/backToTop.png" alt="Back to top" />
+            </a>
+
+            <p class="text-center bg-dark text-white align-bottom">&copy; @DateTime.Now.Year - Hoho Inc</p>
+        </div>
+    </div>
+   
+</footer>
+</body>
+</html>

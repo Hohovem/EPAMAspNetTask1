@@ -1,0 +1,26 @@
+﻿body {
+    background: #F6F9F9;
+}
+
+.form label {
+    width: 180px;
+    float: left;
+}
+
+.form label {
+    width: 180px;
+    float: left;
+    color: #999;
+}
+
+.form input {
+    max-width: 500px;
+}
+
+
+.form textarea {
+    width: 400px;
+    max-width: 400px;
+    min-width: 400px;
+    line-height: 150%;
+}
