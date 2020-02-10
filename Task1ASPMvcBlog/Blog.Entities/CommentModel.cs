@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Task1ASPMvcBlog.Models
+namespace Blog.Entities
 {
     public class CommentModel
     {
