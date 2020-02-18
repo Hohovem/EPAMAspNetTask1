@@ -9,11 +9,6 @@ namespace Task1ASPMvcBlog.DataContexts
 {
     public class CommentsDb : DbContext
     {
-        public CommentsDb() : base("DefaultConnection")
-        {
-
-        }
-
-        public DbSet<CommentModel> Comments { get; set; }
+        public DbSet<Review> Comments { get; set; }
     }
 }

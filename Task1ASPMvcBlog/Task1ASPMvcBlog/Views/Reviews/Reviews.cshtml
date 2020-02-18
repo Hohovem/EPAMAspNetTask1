@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Reviews";
+}
+
+@Styles.Render("~/Content/Reviews.css")
+
+@model IEnumerable<Blog.Entities.Review>
+
+<div class="container">
+    <h2 class="text-center">Blog reviews</h2>
+
+    @foreach (var comment in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-2">
+                        <img src="@Url.Content(comment.ImageArdress)" />
+                    </div>
+                    <div class="col-md-10">
+                        <p>
+                            <a class="float-left" href="#"><strong>@comment.SenderName</strong></a>
+                        </p>
+                        <div class="clearfix"></div>
+                        <p>@comment.Content</p>
+                        <p class="float-right">11.02.19</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    @using (Html.BeginForm("Reviews", "Reviews", FormMethod.Post))
+    {
+        <div class="row input-group">
+            <div class="form-group col-12">
+                <label for="name">Your name</label>
+                <input type="text" class="form-control" name="commentName" placeholder="Alex Hoho">
+            </div>
+        </div>
+
+
+
+        <div class="row input-group">
+            <div class="form-group col-10">
+                <label for="content">Комментарий:</label>
+                <textarea class="form-control" name="content" rows="10" cols="20"></textarea>
+                <input type="submit" value="Отправить" />
+            </div>
+        </div>
+    }
+</div>
+
