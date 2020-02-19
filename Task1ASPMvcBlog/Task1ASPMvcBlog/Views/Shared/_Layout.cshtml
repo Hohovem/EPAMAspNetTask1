@@ -16,32 +16,30 @@
             </a>
         </div>
     </nav>
-
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10 bg-light">
-                @RenderBody()
-            </div>
-            <div class="col-2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-link tab-pane">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-link">@Html.ActionLink("Reviews", "Reviews", "Reviews")</li>
-                    <li class="nav-link">@Html.ActionLink("Quiz", "Quiz", "Quiz")</li>
-                </ul>
+    
+    <div class="wrapper">
+        <div class="content">
+            <div class="row">
+                <div class="col-10 bg-light">
+                    @RenderBody()
+                </div>
+                <div class="col-2">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-link tab-pane">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="nav-link">@Html.ActionLink("Reviews", "Index", "Reviews")</li>
+                        <li class="nav-link">@Html.ActionLink("Quiz", "Quiz", "Quiz")</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-        <footer class="container-fluid border-bottom">
-            <div class="text-center">
+        <div class="footer text-center">
                 <a href="#" title="Вернуться к началу" class="topbutton">
                     <img src="~/Content/Images/NavButtons/backToTop.png" alt="Back to top" />
                 </a>
 
                 <p class="text-center bg-dark text-white align-bottom">&copy; @DateTime.Now.Year - Hoho Inc</p>
-            </div>
-        </footer>
-
-
+        </div>
+    </div>
 </body>
 </html>
