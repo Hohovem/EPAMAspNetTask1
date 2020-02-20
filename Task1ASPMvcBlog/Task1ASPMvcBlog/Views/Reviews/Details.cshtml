@@ -20,16 +20,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PostDate)
+            @Html.DisplayNameFor(model => model.CreatedTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PostDate)
+            @Html.DisplayFor(model => model.CreatedTime)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

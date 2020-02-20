@@ -7,7 +7,7 @@ using Blog.Entities;
 
 namespace Task1ASPMvcBlog.DataContexts
 {
-    public class ReviewsDb : DbContext
+    public class ReviewsDbContext : DbContext
     {
         public DbSet<Review> Reviews { get; set; }
     }

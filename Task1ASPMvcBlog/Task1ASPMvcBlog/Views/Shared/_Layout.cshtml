@@ -8,16 +8,16 @@
     @Styles.Render("~/Content/css")
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
-                <img class="" src="~/Content/Images/logo.jpg" />
-                <h1 class="navbar-brand">Hoho Blog</h1>
-            </a>
-        </div>
-    </nav>
-    
     <div class="wrapper">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    <img class="" src="~/Content/Images/logo.jpg" />
+                    <h1 class="navbar-brand">Hoho Blog</h1>
+                </a>
+            </div>
+        </nav>
+
         <div class="content">
             <div class="row">
                 <div class="col-10 bg-light">
@@ -32,14 +32,15 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer text-center">
-                <a href="#" title="Вернуться к началу" class="topbutton">
-                    <img src="~/Content/Images/NavButtons/backToTop.png" alt="Back to top" />
-                </a>
-
-                <p class="text-center bg-dark text-white align-bottom">&copy; @DateTime.Now.Year - Hoho Inc</p>
-        </div>
+        
+        <footer id="footer" class="footer navbar-fixed-bottom navbar-dark bg-dark">
+            <a href="#" title="Вернуться к началу" class="topbutton">
+                <img src="~/Content/Images/NavButtons/backToTop.png" alt="Back to top"/>
+            </a>
+            <div class="container-fluid">
+                <p class="text-center text-white align-bottom">&copy; @DateTime.Now.Year - Hoho Inc</p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

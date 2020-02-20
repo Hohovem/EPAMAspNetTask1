@@ -13,11 +13,14 @@ namespace Task1ASPMvcBlog.Controllers
 {
     public class ReviewsController : Controller
     {
-        private ReviewsDb db = new ReviewsDb();
+        private ReviewsDbContext db = new ReviewsDbContext();
+
 
         // GET: Reviews
         public ActionResult Index()
         {
+            var arlo = db.Reviews.ToList();
+
             return View(db.Reviews.ToList());
         }
 
@@ -47,7 +50,7 @@ namespace Task1ASPMvcBlog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Content,PostDate")] Review review)
+        public ActionResult Create([Bind(Include = "Content,PostDate,User")] Review review)
         {
             if (ModelState.IsValid)
             {

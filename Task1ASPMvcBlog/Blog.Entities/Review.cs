@@ -8,13 +8,15 @@ namespace Blog.Entities
 {
     public class Review
     {
-        public int Id { get; set; }
+        [Key]
+        public int ReviewId { get; set; }
+
+        [StringLength(20, MinimumLength = 4)]
+        public string AuthorName { get; set; }
 
         public string Content { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime PostDate { get; set; }
-
-        public UserData User { get; set; }
+        public DateTime CreatedTime { get; set; }
     }
 }

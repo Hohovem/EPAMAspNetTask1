@@ -1,25 +1,11 @@
-﻿* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-.wrapper {
+﻿body {
     display: flex;
+    min-height: 100vh;
     flex-direction: column;
-    min-height: 100%;
 }
 
 .content {
-    flex: 1 0 auto;
-}
-
-.footer {
-    flex: 0 0 auto;
+    flex: 1;
 }
 
 .navbar-brand img {
@@ -45,9 +31,6 @@ body {
 
 .topbutton img {
     height: 50px;
-}
-
-body {
 }
 
 /* Set padding to keep content from hitting the edges */
