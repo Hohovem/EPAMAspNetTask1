@@ -3,34 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Task1ASPMvcBlog.DataContexts
+using Blog.Entities.DataContexts;
 
 namespace Blog.Entities.UnitOfWork
 {
     public class UoW : IUoW, IDisposable
     {
-        private ReviewDbContext
+        private ReviewsDbContext DbContext { get; set; }
 
         public UoW()
         {
-
+            CreateDbContext();
         }
 
-        public IRepository<Review> Reviews => new EFRepository<Review>();
+        public IRepository<Review> Reviews => new EFRepository<Review>(DbContext);
 
         public void Commit()
         {
-            throw new NotImplementedException();
+            DbContext.SaveChanges();
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            DbContext.Dispose();
         }
 
         public void CreateDbContext()
         {
-
+            DbContext = new ReviewsDbContext();
         }
     }
 }

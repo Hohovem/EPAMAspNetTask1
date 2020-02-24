@@ -7,21 +7,21 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Blog.Entities;
-using Task1ASPMvcBlog.DataContexts;
+using Blog.Entities.DataContexts;
+using Blog.Entities.UnitOfWork;
 
 namespace Task1ASPMvcBlog.Controllers
 {
     public class ReviewsController : Controller
     {
-        private ReviewsDbContext db = new ReviewsDbContext();
-
+        public UoW UoW { get; set; } = new UoW();
 
         // GET: Reviews
         public ActionResult Index()
         {
-            var arlo = db.Reviews.ToList();
+            List<Review> reviews = UoW.Reviews.GetAll().ToList();
 
-            return View(db.Reviews.ToList());
+            return View(reviews);
         }
 
         // GET: Reviews/Details/5
@@ -31,7 +31,7 @@ namespace Task1ASPMvcBlog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+            Review review = UoW.Reviews.GetById(id);
             if (review == null)
             {
                 return HttpNotFound();
@@ -50,12 +50,12 @@ namespace Task1ASPMvcBlog.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Content,PostDate,User")] Review review)
+        public ActionResult Create([Bind(Include = "Content,AuthorName,CreatedTime")] Review review)
         {
             if (ModelState.IsValid)
             {
-                db.Reviews.Add(review);
-                db.SaveChanges();
+                UoW.Reviews.Insert(review);
+                UoW.Commit();
                 return RedirectToAction("Index");
             }
 
@@ -69,7 +69,7 @@ namespace Task1ASPMvcBlog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+            Review review =UoW.Reviews.GetById(id);
             if (review == null)
             {
                 return HttpNotFound();
@@ -86,8 +86,8 @@ namespace Task1ASPMvcBlog.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(review).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(review).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(review);
@@ -100,7 +100,7 @@ namespace Task1ASPMvcBlog.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Review review = db.Reviews.Find(id);
+            Review review = UoW.Reviews.GetById(id);
             if (review == null)
             {
                 return HttpNotFound();
@@ -113,9 +113,8 @@ namespace Task1ASPMvcBlog.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Review review = db.Reviews.Find(id);
-            db.Reviews.Remove(review);
-            db.SaveChanges();
+            Review review = UoW.Reviews.GetById(id);
+            UoW.Reviews.Delete(review);
             return RedirectToAction("Index");
         }
 
@@ -123,7 +122,7 @@ namespace Task1ASPMvcBlog.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                UoW.Dispose();
             }
             base.Dispose(disposing);
         }

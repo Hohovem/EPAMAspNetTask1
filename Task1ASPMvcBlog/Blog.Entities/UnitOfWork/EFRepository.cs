@@ -15,8 +15,10 @@ namespace Blog.Entities.UnitOfWork
 
         public EFRepository(DbContext dbContext)
         {
-            if(dbContext == null)
+            if (dbContext == null)
+            {
                 throw new ArgumentException("dbContext");
+            }
             else
             {
                 DbContext = dbContext;

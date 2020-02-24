@@ -1,20 +1,19 @@
-﻿namespace Task1ASPMvcBlog.DataContexts.ReviewsMigrations
+﻿namespace Blog.Entities.DataContexts.ReviewsMigrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Task1ASPMvcBlog.DataContexts.ReviewsDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Blog.Entities.DataContexts.ReviewsDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"DataContexts\ReviewsMigrations";
-            ContextKey = "Task1ASPMvcBlog.DataContexts.ReviewsDb";
         }
 
-        protected override void Seed(Task1ASPMvcBlog.DataContexts.ReviewsDbContext context)
+        protected override void Seed(Blog.Entities.DataContexts.ReviewsDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

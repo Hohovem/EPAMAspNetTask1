@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Entities.UnitOfWork
 {
-    interface IPostRepository<T> : IRepository<T> where T : class
+    public interface IPostRepository<T> : IRepository<T> where T : class
     {
         int GetCommentLenght();
     }

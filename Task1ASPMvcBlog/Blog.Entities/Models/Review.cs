@@ -17,6 +17,6 @@ namespace Blog.Entities
         public string Content { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime CreatedTime { get; set; }
+        public DateTime? CreatedTime { get; set; }
     }
 }

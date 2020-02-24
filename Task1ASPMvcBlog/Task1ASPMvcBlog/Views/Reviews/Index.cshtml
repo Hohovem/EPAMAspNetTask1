@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.CreatedTime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.User.Name)
+            @Html.DisplayNameFor(model => model.AuthorName)
         </th>
         <th></th>
     </tr>
@@ -30,10 +30,10 @@
             @Html.DisplayFor(modelItem => item.Content)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CreatedTime)
+            @Html.DisplayFor(modelItem => item.CreatedTime.ToString())
         </td>
         <td>
-            @Html.DisplayFor( modelItem => item.User.Name)
+            @Html.DisplayFor( modelItem => item.AuthorName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReviewId }) |

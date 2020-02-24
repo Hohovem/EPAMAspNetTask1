@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blog.Entities.UnitOfWork
 {
-    interface IUoW
+    public interface IUoW
     {
         void Commit();
 
