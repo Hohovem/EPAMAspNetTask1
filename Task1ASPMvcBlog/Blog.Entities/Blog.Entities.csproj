@@ -56,6 +56,14 @@
     <Compile Include="DataContexts\ReviewsMigrations\202002202309070_ReviewsDbContext.designer.cs">
       <DependentUpon>202002202309070_ReviewsDbContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataContexts\ReviewsMigrations\202002251855264_InitialCreate.cs" />
+    <Compile Include="DataContexts\ReviewsMigrations\202002251855264_InitialCreate.designer.cs">
+      <DependentUpon>202002251855264_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataContexts\ReviewsMigrations\202002251904053_Rename.cs" />
+    <Compile Include="DataContexts\ReviewsMigrations\202002251904053_Rename.designer.cs">
+      <DependentUpon>202002251904053_Rename.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataContexts\ReviewsMigrations\Configuration.cs" />
     <Compile Include="Models\Review.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +81,12 @@
   <ItemGroup>
     <EmbeddedResource Include="DataContexts\ReviewsMigrations\202002202309070_ReviewsDbContext.resx">
       <DependentUpon>202002202309070_ReviewsDbContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ReviewsMigrations\202002251855264_InitialCreate.resx">
+      <DependentUpon>202002251855264_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataContexts\ReviewsMigrations\202002251904053_Rename.resx">
+      <DependentUpon>202002251904053_Rename.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

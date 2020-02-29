@@ -12,7 +12,7 @@ namespace Blog.Entities
         public int ReviewId { get; set; }
 
         [StringLength(20, MinimumLength = 4)]
-        public string AuthorName { get; set; }
+        public string AuthorNameTest { get; set; }
 
         public string Content { get; set; }
 
